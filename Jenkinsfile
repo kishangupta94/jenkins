@@ -8,6 +8,7 @@ pipeline {
                 #!/bin/bash
                 kernel=$(uname -r)
                 echo "KERNEL_VERSION=$kernel" > kernel.properties
+                echo "stage 1 completed successfully"
                 '''
             }
         }
@@ -20,6 +21,7 @@ pipeline {
 
                     // Use the kernel variable in the second stage
                     sh "echo $kernel"
+                    echo "stage 2 completed successfully"
                 }
             }
         }
