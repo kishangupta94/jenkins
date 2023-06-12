@@ -17,7 +17,7 @@ pipeline {
             steps {
                 script {
                     def properties = readProperties file: 'kernel.properties'
-                    def kernel = properties.KERNEL_VERSION
+                    def kernel = properties['KERNEL_VERSION']
 
                     // Use the kernel variable in the second stage
                     sh "echo $kernel"
@@ -27,3 +27,4 @@ pipeline {
         }
     }
 }
+
