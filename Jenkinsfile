@@ -5,7 +5,7 @@ pipeline {
         stage('First Stage') {
             steps {
                 script {
-                    def kernel = sh(returnStdout: true, script: 'uname -r').trim()
+                    def kernel = sh(returnStdout: true, script: 'sh script.sh')
                     env.KERNEL_VERSION = kernel
                     echo "stage 1 completed successfully"
                 }
