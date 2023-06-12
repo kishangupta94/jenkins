@@ -6,6 +6,7 @@ pipeline {
             steps {
                 script {
                     def kernel = sh(returnStdout: true, script: 'sh script.sh')
+                    sh "echo $kernel"
                     env.KERNEL_VERSION = kernel
                     echo "stage 1 completed successfully"
                 }
